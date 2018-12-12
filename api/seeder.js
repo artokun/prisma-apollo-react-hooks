@@ -16,13 +16,13 @@ async function main() {
   types.forEach(async type => await prisma.createElement({ name: type }))
   const savedTypes = await prisma.elements()
 
-  const createPokemon = async ({ name, types }, index) => {
+  const createPokemon = async ({ name, types }) => {
     const typeIds = savedTypes
       .filter(({ name }) => types.some(q => q === name))
       .map(({ id }) => ({ id }))
-
+    const formattedName = name.charAt(0).toUpperCase() + name.slice(1)
     return prisma.createPokemon({
-      name: name,
+      name: formattedName,
       types: { connect: typeIds }
     })
   }
