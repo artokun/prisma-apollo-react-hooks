@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose up -d && node index.js",
+    "start": "npm run deploy && node index.js",
     "dev": "docker-compose up -d && nodemon index.js",
-    "postinstall": "docker-compose up -d && prisma deploy"
+    "deploy": "prisma deploy"
   },
   "keywords": [],
   "author": "",
