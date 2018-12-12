@@ -1,0 +1,10 @@
+type Pokemon {
+  id: ID! @unique
+  name: String! @unique
+  types: [Element!]!
+}
+
+type Element {
+  id: ID! @unique
+  name: String!
+}

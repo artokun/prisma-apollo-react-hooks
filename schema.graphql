@@ -1,0 +1,18 @@
+type Query {
+  search(query: String!): [Pokemon!]!
+}
+
+type Mutation {
+  createPokemonWithTypes(name: String!, types: [String!]!): Pokemon
+}
+
+type Pokemon {
+  id: ID!
+  name: String!
+  types: [Element!]!
+}
+
+type Element {
+  id: ID!
+  name: String!
+}
